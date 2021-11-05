@@ -1,0 +1,27 @@
+{
+  "name": "dom-document-tool",
+  "version": "1.0.1",
+  "description": "dom document tool",
+  "main": "dom-document-tool.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dom",
+    "document",
+    "tool"
+  ],
+  "author": "fwg",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adf0001/dom-document-tool.git"
+  },
+  "bugs": {
+    "url": "https://github.com/adf0001/dom-document-tool/issues"
+  },
+  "homepage": "https://github.com/adf0001/dom-document-tool#readme",
+  "dependencies": {
+    "element-tool": "^1.0.1"
+  }
+}
