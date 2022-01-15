@@ -1,11 +1,6 @@
 ﻿
 // dom-document-tool @ npm, dom document tool.
 
-var insert_adjacent_return = require("insert-adjacent-return");
-
-//insert adjacent 'beforeend' to document.body
-var appendBodyHtml = function (htmlText) { return insert_adjacent_return.append(document.body, htmlText); }
-
 //call .querySelector() by attribute name and value
 var querySelectorByAttr = function (el, head, attrName, attrValue, tail) {
 	if(typeof el === "string") el= document.getElementById(el);
@@ -52,14 +47,6 @@ var dispatchEventByName = function (el, eventName, delay) {
 
 module.exports = {
 
-	//insert_adjacent_return
-	insertAdjacent: insert_adjacent_return,
-
-	appendHtml: insert_adjacent_return.append,
-	appendBodyHtml: appendBodyHtml,
-	prependHtml: insert_adjacent_return.prepend,
-
-	//other
 	querySelectorByAttr: querySelectorByAttr,
 
 	getSearchPart: getSearchPart,

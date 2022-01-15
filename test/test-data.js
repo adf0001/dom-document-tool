@@ -6,18 +6,6 @@ _ele = function (idOrEl) { return (typeof idOrEl === "string") ? document.getEle
 
 module.exports = {
 
-	".appendHtml()": function (done) {
-		var a = dom_document_tool.appendHtml('divResult3', '<span>aa</span> <span>bb</span> ');
-		return a.textContent == 'aa';
-	},
-	".appendBodyHtml()": function (done) {
-		var a = dom_document_tool.appendBodyHtml('<span>aa</span> <span>bb</span> ');
-		return a.textContent == 'aa'
-	},
-	".prependHtml()": function (done) {
-		var a = dom_document_tool.prependHtml('divResult3', '<span>pp</span> <span>qq</span> ');
-		return a.textContent == 'pp';
-	},
 	".querySelectorByAttr()": function (done) {
 		_ele('divResult3').innerHTML = '<span myattr=11>aaa</span> <span myattr=22>bbb</span> <b myattr=22>ccc</b> <b myattr=22>ddd</b>';
 		return dom_document_tool.querySelectorByAttr('divResult3', '', 'myattr').getAttribute('myattr') === '11' &&

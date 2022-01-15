@@ -1,6 +1,6 @@
 {
   "name": "dom-document-tool",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "dom document tool",
   "main": "dom-document-tool.js",
   "scripts": {
@@ -20,8 +20,5 @@
   "bugs": {
     "url": "https://github.com/adf0001/dom-document-tool/issues"
   },
-  "homepage": "https://github.com/adf0001/dom-document-tool#readme",
-  "dependencies": {
-    "insert-adjacent-return": "^1.0.1"
-  }
+  "homepage": "https://github.com/adf0001/dom-document-tool#readme"
 }
