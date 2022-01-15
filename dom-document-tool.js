@@ -1,26 +1,11 @@
 ﻿
 // dom-document-tool @ npm, dom document tool.
 
-var ele= require("element-tool");
-
-//insert adjacent 'beforeend', return the first inserted element
-var appendHtml = function (parentNode, htmlText) {
-	parentNode = ele(parentNode);
-	var lastChild = parentNode.lastChild;
-
-	parentNode.insertAdjacentHTML('beforeend', htmlText);
-	return lastChild ? lastChild.nextSibling : parentNode.firstChild;
-}
+var ele = require("ele-tool");
+var insert_adjacent_return = require("insert-adjacent-return");
 
 //insert adjacent 'beforeend' to document.body
-var appendBodyHtml = function (htmlText) { return appendHtml(document.body, htmlText); }
-
-//insert adjacent 'afterbegin', return the first inserted element
-var prependHtml = function (parentNode, htmlText) {
-	parentNode = ele(parentNode);
-	parentNode.insertAdjacentHTML('afterbegin', htmlText);
-	return parentNode.firstChild;
-}
+var appendBodyHtml = function (htmlText) { return insert_adjacent_return.append(document.body, htmlText); }
 
 //call .querySelector() by attribute name and value
 var querySelectorByAttr = function (el, head, attrName, attrValue, tail) {
@@ -64,10 +49,14 @@ var dispatchEventByName = function (el, eventName, delay) {
 
 module.exports = {
 
-	appendHtml: appendHtml,
-	appendBodyHtml: appendBodyHtml,
-	prependHtml: prependHtml,
+	//insert_adjacent_return
+	insertAdjacent: insert_adjacent_return,
 
+	appendHtml: insert_adjacent_return.append,
+	appendBodyHtml: appendBodyHtml,
+	prependHtml: insert_adjacent_return.prepend,
+
+	//other
 	querySelectorByAttr: querySelectorByAttr,
 
 	getSearchPart: getSearchPart,
