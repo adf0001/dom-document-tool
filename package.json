@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/adf0001/dom-document-tool#readme",
   "dependencies": {
-    "ele-tool": "^1.0.1",
     "insert-adjacent-return": "^1.0.1"
   }
 }

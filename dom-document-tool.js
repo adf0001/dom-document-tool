@@ -1,7 +1,6 @@
 ﻿
 // dom-document-tool @ npm, dom document tool.
 
-var ele = require("ele-tool");
 var insert_adjacent_return = require("insert-adjacent-return");
 
 //insert adjacent 'beforeend' to document.body
@@ -9,7 +8,9 @@ var appendBodyHtml = function (htmlText) { return insert_adjacent_return.append(
 
 //call .querySelector() by attribute name and value
 var querySelectorByAttr = function (el, head, attrName, attrValue, tail) {
-	return ele(el).querySelector((head || "") + "[" + attrName + ((typeof attrValue !== "undefined" && attrValue !== null) ? ("='" + ("" + attrValue).replace(/(\<\>\'\"\:)/g, "\\$1") + "'") : "") + "]" + (tail || ""));
+	if(typeof el === "string") el= document.getElementById(el);
+
+	return el.querySelector((head || "") + "[" + attrName + ((typeof attrValue !== "undefined" && attrValue !== null) ? ("='" + ("" + attrValue).replace(/(\<\>\'\"\:)/g, "\\$1") + "'") : "") + "]" + (tail || ""));
 }
 
 //get part value by name, default from window.location.search.
@@ -41,8 +42,10 @@ var dispatchEventByName = function (el, eventName, delay) {
 		evt.initEvent(eventName, true, true);
 	}
 
-	if (delay >= 0) { setTimeout(function () { ele(el).dispatchEvent(evt); }, delay); }
-	else { ele(el).dispatchEvent(evt); }
+	if(typeof el === "string") el= document.getElementById(el);
+
+	if (delay >= 0) { setTimeout(function () { el.dispatchEvent(evt); }, delay); }
+	else { el.dispatchEvent(evt); }
 }
 
 // module
